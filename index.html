@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一か月お小遣い管理</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- ヘッダー -->
+        <header class="header">
+            <h1>一か月お小遣い管理</h1>
+            <div class="current-month" id="currentMonth"></div>
+        </header>
+
+        <!-- メインコンテンツ -->
+        <main class="main">
+            <!-- 左側：概要エリア -->
+            <section class="summary-section">
+                <div class="budget-setup" id="budgetSetup">
+                    <h2>今月の予算設定</h2>
+                    <div class="input-group">
+                        <label for="monthlyBudget">今月のお小遣い（円）</label>
+                        <input type="number" id="monthlyBudget" placeholder="30000">
+                        <button id="setBudgetBtn">設定</button>
+                    </div>
+                </div>
+
+                <div class="budget-summary" id="budgetSummary" style="display: none;">
+                    <h2>今月の状況</h2>
+                    <div class="summary-card">
+                        <div class="summary-item">
+                            <span class="label">今月の予算</span>
+                            <span class="value" id="totalBudget">¥0</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="label">使った金額</span>
+                            <span class="value" id="totalSpent">¥0</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="label">残り予算</span>
+                            <span class="value" id="remainingBudget">¥0</span>
+                        </div>
+                        <div class="summary-item highlight">
+                            <span class="label">
+                                今日使える金額
+                                <small id="remainingDaysInfo" style="display: block; font-size: 0.8em; opacity: 0.8; font-weight: normal;">（残り日数から計算）</small>
+                            </span>
+                            <span class="value" id="dailyBudget">¥0</span>
+                        </div>
+                    </div>
+                    <button id="resetBudgetBtn" class="reset-btn">予算をリセット</button>
+                </div>
+
+                <!-- 支出登録フォーム -->
+                <div class="expense-form" id="expenseForm" style="display: none;">
+                    <h3>支出登録</h3>
+                    <div class="form-group">
+                        <label for="expenseDate">日付</label>
+                        <input type="date" id="expenseDate">
+                    </div>
+                    <div class="form-group">
+                        <label for="expenseAmount">金額（円）</label>
+                        <input type="number" id="expenseAmount" placeholder="500">
+                    </div>
+                    <div class="form-group">
+                        <label for="expenseCategory">カテゴリ</label>
+                        <select id="expenseCategory">
+                            <option value="食費">食費</option>
+                            <option value="交通費">交通費</option>
+                            <option value="趣味">趣味</option>
+                            <option value="その他">その他</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="expenseMemo">メモ</label>
+                        <input type="text" id="expenseMemo" placeholder="昼食代">
+                    </div>
+                    <div class="form-buttons">
+                        <button id="addExpenseBtn">登録</button>
+                        <button id="updateExpenseBtn" style="display: none;">更新</button>
+                        <button id="cancelExpenseBtn" style="display: none;">キャンセル</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 右側：カレンダーエリア -->
+            <section class="calendar-section">
+                <div class="calendar-header">
+                    <button id="prevMonth">&lt;</button>
+                    <h2 id="calendarTitle"></h2>
+                    <button id="nextMonth">&gt;</button>
+                </div>
+                <div class="calendar" id="calendar"></div>
+            </section>
+        </main>
+
+        <!-- 支出履歴 -->
+        <section class="history-section">
+            <h2>支出履歴</h2>
+            <div class="history-list" id="historyList"></div>
+        </section>
+    </div>
+
+    <!-- モーダル -->
+    <div class="modal" id="expenseModal" style="display: none;">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h3>支出詳細</h3>
+            <div id="modalContent"></div>
+            <div class="modal-buttons">
+                <button id="editExpenseBtn">編集</button>
+                <button id="deleteExpenseBtn">削除</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

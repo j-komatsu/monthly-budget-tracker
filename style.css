@@ -1,0 +1,584 @@
+/* リセットCSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 基本設定 */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ヘッダー */
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.header h1 {
+    color: #4a5568;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.current-month {
+    font-size: 1.1rem;
+    color: #718096;
+    font-weight: 500;
+}
+
+/* メインコンテンツ */
+.main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+/* サマリーセクション */
+.summary-section {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.summary-section h2, .summary-section h3 {
+    color: #2d3748;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* 予算設定 */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input-group label {
+    font-weight: 500;
+    color: #4a5568;
+}
+
+.input-group input {
+    padding: 12px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+button {
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* サマリーカード */
+.summary-card {
+    background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.summary-item:last-child {
+    border-bottom: none;
+}
+
+.summary-item.highlight {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    margin: 10px -10px -10px -10px;
+    padding: 15px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.label {
+    font-weight: 500;
+}
+
+.value {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.reset-btn {
+    background: linear-gradient(135deg, #fc8181 0%, #f56565 100%);
+    font-size: 0.9rem;
+    padding: 8px 16px;
+}
+
+/* 支出フォーム */
+.expense-form {
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 2px solid #e2e8f0;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #4a5568;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.form-buttons button {
+    flex: 1;
+    min-width: 100px;
+}
+
+/* カレンダーセクション */
+.calendar-section {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.calendar-header button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    padding: 0;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calendar-header h2 {
+    color: #2d3748;
+    font-weight: 600;
+}
+
+/* カレンダー */
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    background: #f7fafc;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.calendar-day {
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    position: relative;
+    min-height: 60px;
+}
+
+.calendar-day:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-day.other-month {
+    color: #a0aec0;
+    background: #f7fafc;
+}
+
+.calendar-day.today {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    font-weight: 600;
+}
+
+.calendar-day.has-expense {
+    background: linear-gradient(135deg, #48bb78, #38a169);
+    color: white;
+}
+
+.calendar-day.over-budget {
+    background: linear-gradient(135deg, #f56565, #e53e3e);
+    color: white;
+}
+
+.calendar-day-number {
+    font-weight: 500;
+}
+
+.calendar-day-amount {
+    font-size: 0.7rem;
+    margin-top: 2px;
+    opacity: 0.9;
+}
+
+.calendar-header-day {
+    background: #4a5568;
+    color: white;
+    font-weight: 600;
+    cursor: default;
+    border-radius: 8px 8px 0 0;
+}
+
+.calendar-header-day:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+/* 履歴セクション */
+.history-section {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.history-section h2 {
+    color: #2d3748;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.history-list {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.history-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 10px;
+    background: #f7fafc;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.history-item:hover {
+    background: #edf2f7;
+    transform: translateX(5px);
+}
+
+.history-date {
+    font-weight: 600;
+    color: #4a5568;
+}
+
+.history-details {
+    flex: 1;
+    margin: 0 15px;
+}
+
+.history-memo {
+    color: #718096;
+    font-size: 0.9rem;
+}
+
+.history-category {
+    display: inline-block;
+    background: #667eea;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    margin-top: 5px;
+}
+
+.history-amount {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #e53e3e;
+}
+
+/* モーダル */
+.modal {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background: white;
+    margin: 5% auto;
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    position: relative;
+    animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: #a0aec0;
+    transition: color 0.3s ease;
+}
+
+.close:hover {
+    color: #4a5568;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.modal-buttons button {
+    flex: 1;
+}
+
+.modal-buttons button:last-child {
+    background: linear-gradient(135deg, #fc8181 0%, #f56565 100%);
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .main {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .calendar {
+        padding: 15px;
+        gap: 3px;
+    }
+    
+    .calendar-day {
+        min-height: 50px;
+        font-size: 0.8rem;
+    }
+    
+    .calendar-day-amount {
+        font-size: 0.6rem;
+    }
+    
+    .summary-section,
+    .calendar-section,
+    .history-section {
+        padding: 20px;
+    }
+    
+    .history-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .history-details {
+        margin: 0;
+        width: 100%;
+    }
+    
+    .form-buttons {
+        flex-direction: column;
+    }
+    
+    .form-buttons button {
+        min-width: auto;
+    }
+    
+    .modal-content {
+        margin: 10% auto;
+        padding: 20px;
+        width: 95%;
+    }
+    
+    .modal-buttons {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .header {
+        padding: 15px;
+    }
+    
+    .header h1 {
+        font-size: 1.3rem;
+    }
+    
+    .calendar-header button {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+    
+    .calendar-day {
+        min-height: 45px;
+        font-size: 0.75rem;
+    }
+    
+    .summary-section,
+    .calendar-section,
+    .history-section {
+        padding: 15px;
+    }
+}
+
+/* スクロールバーのスタイリング */
+.history-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.history-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.history-list::-webkit-scrollbar-thumb {
+    background: #667eea;
+    border-radius: 4px;
+}
+
+.history-list::-webkit-scrollbar-thumb:hover {
+    background: #5a67d8;
+}
+
+/* 空の状態 */
+.empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: #718096;
+}
+
+.empty-state h3 {
+    margin-bottom: 10px;
+    color: #4a5568;
+}
+
+/* 警告表示 */
+.warning {
+    background: linear-gradient(135deg, #fed7d7, #feb2b2);
+    color: #742a2a;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+    border-left: 4px solid #f56565;
+}
+
+.warning-text {
+    font-weight: 500;
+}
