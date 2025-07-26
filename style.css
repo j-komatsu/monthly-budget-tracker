@@ -14,6 +14,7 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     width: 100%;
+    max-width: 100vw;
 }
 
 .container {
@@ -21,7 +22,9 @@ body {
     margin: 0 auto;
     padding: 20px;
     width: 100%;
+    max-width: 100%;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 /* ヘッダー */
@@ -257,6 +260,7 @@ button:active {
     padding: 20px;
     border-radius: 12px;
     width: 100%;
+    max-width: 100%;
     box-sizing: border-box;
     overflow: hidden;
 }
@@ -274,6 +278,11 @@ button:active {
     font-size: 0.9rem;
     position: relative;
     min-height: 60px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    word-break: break-all;
+    overflow: hidden;
 }
 
 .calendar-day:hover {
@@ -464,6 +473,8 @@ button:active {
     .container {
         padding: 10px;
         max-width: 100%;
+        margin: 0;
+        width: 100%;
     }
     
     .main {
@@ -488,12 +499,19 @@ button:active {
     .calendar {
         padding: 10px;
         gap: 2px;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
     }
     
     .calendar-day {
         min-height: 55px;
         font-size: 0.85rem;
         padding: 2px;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        overflow: hidden;
     }
     
     .calendar-day-amount {
@@ -519,6 +537,10 @@ button:active {
     .calendar-section,
     .history-section {
         padding: 15px;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        overflow-x: hidden;
     }
     
     .summary-item {
@@ -605,6 +627,9 @@ button:active {
 @media (max-width: 480px) {
     .container {
         padding: 8px;
+        margin: 0;
+        width: 100%;
+        max-width: 100%;
     }
     
     .header {
@@ -622,6 +647,9 @@ button:active {
     .calendar {
         padding: 8px;
         gap: 1px;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
     }
     
     .calendar-header {
@@ -641,6 +669,10 @@ button:active {
     .calendar-day {
         min-height: 50px;
         font-size: 0.8rem;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        overflow: hidden;
     }
     
     .calendar-day-amount {
@@ -651,6 +683,10 @@ button:active {
     .calendar-section,
     .history-section {
         padding: 12px;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        overflow-x: hidden;
     }
     
     .summary-section h2,
@@ -700,6 +736,9 @@ button:active {
 @media (max-width: 360px) {
     .container {
         padding: 5px;
+        margin: 0;
+        width: 100%;
+        max-width: 100%;
     }
     
     .header {
@@ -723,6 +762,10 @@ button:active {
     .calendar-section,
     .history-section {
         padding: 10px;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        overflow-x: hidden;
     }
 }
 
